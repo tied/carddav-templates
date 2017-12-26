@@ -1,0 +1,240 @@
+<p>
+    <ac:structured-macro ac:name="vcard-macro" ac:schema-version="1"/>
+</p>
+<table class="wrapped">
+    <colgroup>
+        <col/>
+        <col/>
+    </colgroup>
+    <tbody class="com-mesilat-object-organization">
+        <tr>
+            <td>
+                <at:i18n at:key="com.mesilat.carddav-templates.organization.title"/>
+            </td>
+            <td class="com-mesilat-attribute-organization">
+                <ac:placeholder ac:type="text">
+                    <at:i18n at:key="com.mesilat.carddav-templates.organization.placeholder"/>
+                </ac:placeholder>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <at:i18n at:key="com.mesilat.carddav-templates.phones.title"/>
+            </td>
+            <td class="com-mesilat-attribute-phones">
+                
+                <table class="wrapped">
+                    <colgroup> 
+                        <col/> 
+                        <col/> 
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <at:i18n at:key="com.mesilat.carddav-templates.phone.type"/>
+                            </th>
+                            <th>
+                                <at:i18n at:key="com.mesilat.carddav-templates.phone.number"/>
+                            </th>
+                        </tr>
+                        <tr class="com-mesilat-object-phone">
+                            <td class="com-mesilat-attribute-phone-type">
+                                <ac:placeholder ac:type="com-mesilat-autocomplete-CARDDAV_PHONE">
+                                    <at:i18n at:key="com.mesilat.carddav-templates.prompt.startTyping"/>
+                                </ac:placeholder>
+                            </td>
+                            <td class="com-mesilat-attribute-phone-number">
+                                <ac:placeholder>
+                                    <at:i18n at:key="com.mesilat.carddav-templates.prompt.samplePhone"/>
+                                </ac:placeholder>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <ac:structured-macro ac:name="Add Row Button" ac:schema-version="1"/>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <at:i18n at:key="com.mesilat.carddav-templates.emails.title"/>
+            </td>
+            <td class="com-mesilat-attribute-emails">
+                
+                <table class="wrapped">
+                    <colgroup> 
+                        <col/> 
+                        <col/> 
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <at:i18n at:key="com.mesilat.carddav-templates.email.type"/>
+                            </th>
+                            <th>
+                                <at:i18n at:key="com.mesilat.carddav-templates.email.address"/>
+                            </th>
+                        </tr>
+                        <tr class="com-mesilat-object-email">
+                            <td class="com-mesilat-attribute-email-type">
+                                <ac:placeholder ac:type="com-mesilat-autocomplete-CARDDAV_EMAIL">
+                                    <at:i18n at:key="com.mesilat.carddav-templates.prompt.startTyping"/>
+                                </ac:placeholder>
+                            </td>
+                            <td class="com-mesilat-attribute-email-address">
+                                <ac:placeholder>
+                                    <at:i18n at:key="com.mesilat.carddav-templates.prompt.sampleAddress"/>
+                                </ac:placeholder>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <ac:structured-macro ac:name="Add Row Button" ac:schema-version="1"/>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <at:i18n at:key="com.mesilat.carddav-templates.addresses.title"/>
+            </td>
+            <td class="com-mesilat-attribute-addresses">
+                <table class="wrapped">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table class="wrapped">
+                                    <tbody class="com-mesilat-object-address">
+                                        <tr>
+                                            <th>
+                                                <at:i18n at:key="com.mesilat.carddav-templates.address.type"/>
+                                            </th>
+                                            <td class="com-mesilat-attribute-address-type">
+                                                <ac:placeholder ac:type="com-mesilat-autocomplete-CARDDAV_ADDRESS">
+                                                    <at:i18n at:key="com.mesilat.carddav-templates.prompt.startTyping"/>
+                                                </ac:placeholder>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <at:i18n at:key="com.mesilat.carddav-templates.address.postal-code.title"/>
+                                            </th>
+                                            <td class="com-mesilat-attribute-postal-code">
+                                                <ac:placeholder>
+                                                    <at:i18n at:key="com.mesilat.carddav-templates.address.postal-code.placeholder"/>
+                                                </ac:placeholder>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <at:i18n at:key="com.mesilat.carddav-templates.address.street.title"/>
+                                            </th>
+                                            <td class="com-mesilat-attribute-street">
+                                                <ac:placeholder>
+                                                    <at:i18n at:key="com.mesilat.carddav-templates.address.street.placeholder"/>
+                                                </ac:placeholder>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <at:i18n at:key="com.mesilat.carddav-templates.address.locality.title"/>
+                                            </th>
+                                            <td class="com-mesilat-attribute-locality">
+                                                <ac:placeholder>
+                                                    <at:i18n at:key="com.mesilat.carddav-templates.address.locality.placeholder"/>
+                                                </ac:placeholder>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <at:i18n at:key="com.mesilat.carddav-templates.address.region.title"/>
+                                            </th>
+                                            <td class="com-mesilat-attribute-region">
+                                                <ac:placeholder>
+                                                    <at:i18n at:key="com.mesilat.carddav-templates.address.region.placeholder"/>
+                                                </ac:placeholder>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <at:i18n at:key="com.mesilat.carddav-templates.address.country.title"/>
+                                            </th>
+                                            <td class="com-mesilat-attribute-country">
+                                                <ac:placeholder ac:type="com-mesilat-autocomplete-CARDDAV_COUNTRIES">
+                                                    <at:i18n at:key="com.mesilat.carddav-templates.address.country.placeholder"/>
+                                                </ac:placeholder>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <at:i18n at:key="com.mesilat.carddav-templates.address.po-box.title"/>
+                                            </th>
+                                            <td class="com-mesilat-attribute-po-box">
+                                                <ac:placeholder>
+                                                    <at:i18n at:key="com.mesilat.carddav-templates.address.po-box.placeholder"/>
+                                                </ac:placeholder>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <at:i18n at:key="com.mesilat.carddav-templates.address.extended.title"/>
+                                            </th>
+                                            <td class="com-mesilat-attribute-extended">
+                                                <ac:placeholder>
+                                                    <at:i18n at:key="com.mesilat.carddav-templates.address.extended.placeholder"/>
+                                                </ac:placeholder>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <ac:structured-macro ac:name="Add Row Button" ac:schema-version="1"/>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <at:i18n at:key="com.mesilat.carddav-templates.urls.title"/>
+            </td>
+            <td class="com-mesilat-attribute-urls">
+                
+                <table class="wrapped">
+                    <colgroup> 
+                        <col/> 
+                        <col/> 
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <at:i18n at:key="com.mesilat.carddav-templates.url.type"/>
+                            </th>
+                            <th>
+                                <at:i18n at:key="com.mesilat.carddav-templates.url.address"/>
+                            </th>
+                        </tr>
+                        <tr class="com-mesilat-object-url">
+                            <td class="com-mesilat-attribute-url-type">
+                                <ac:placeholder ac:type="com-mesilat-autocomplete-CARDDAV_URL">
+                                    <at:i18n at:key="com.mesilat.carddav-templates.prompt.startTyping"/>
+                                </ac:placeholder>
+                            </td>
+                            <td class="com-mesilat-attribute-url-address">
+                                <ac:placeholder>
+                                    <at:i18n at:key="com.mesilat.carddav-templates.prompt.sampleUrl"/>
+                                </ac:placeholder>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <ac:structured-macro ac:name="Add Row Button" ac:schema-version="1"/>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>

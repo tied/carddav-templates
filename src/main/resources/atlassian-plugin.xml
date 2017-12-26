@@ -1,0 +1,134 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <resource type="i18n" name="i18n" location="i18n/carddav-templates"/>
+    <resource type="download" name="images/" location="/images"/>
+
+
+    <!-- 
+    ORGANIZATION
+    -->
+    <content-template
+        key="organization-template"
+        template-title-key="com.mesilat.carddav-templates.org.title"
+        i18n-name-key="com.mesilat.carddav-templates.org.title">
+        <resource name="template" type="download" location="/templates/organization.xml" />
+        <context-provider class="com.mesilat.carddav.OrgContextProvider" />
+    </content-template>
+
+    <blueprint
+        key="organization-blueprint"
+        content-template-key="organization-template"
+        i18n-name-key="com.mesilat.carddav-templates.organization-blueprint"
+        index-key="carddav-organization" />
+
+    <web-item
+        key="organization-webitem"
+        i18n-name-key="com.mesilat.carddav-templates.organization-create.title"
+        section="system.create.dialog/content">
+        <description key="com.mesilat.carddav-templates.organization-create.desc" />
+        <resource name="icon" type="download" location="/images/myblueprint.png" />
+        <param name="blueprintKey" value="organization-blueprint" />
+    </web-item>
+
+    <!-- 
+    PERSON
+    -->
+    <content-template
+        key="person-template"
+        template-title-key="com.mesilat.carddav-templates.person.title"
+        i18n-name-key="com.mesilat.carddav-templates.person.title">
+        <resource name="template" type="download" location="/templates/person.xml" />
+        <context-provider class="com.mesilat.carddav.PersonContextProvider" />
+    </content-template>
+
+    <blueprint
+        key="person-blueprint"
+        content-template-key="person-template"
+        i18n-name-key="com.mesilat.carddav-templates.person-blueprint"
+        index-key="carddav-person" />
+
+    <web-item
+        key="person-webitem"
+        i18n-name-key="com.mesilat.carddav-templates.person-create.title"
+        section="system.create.dialog/content">
+        <description key="com.mesilat.carddav-templates.person-create.desc" />
+        <resource name="icon" type="download" location="/images/myblueprint.png" />
+        <param name="blueprintKey" value="person-blueprint" />
+    </web-item>
+
+    <!-- 
+    VCARD
+    -->
+    <xhtml-macro key="vcard-macro" name="vcard-macro" state="enabled"
+                 class="com.mesilat.carddav.VCardMacro"
+                 icon="/download/resources/com.mesilat.carddav-templates/images/vcard.png">
+        <resource type="i18n" name="i18n" location="i18n/carddav-templates"/>
+        <category name="confluence-content"/>
+        <description key="com.mesilat.carddav-templates.vcard-macro.desc"></description>
+        <parameters>
+        </parameters>
+    </xhtml-macro>
+    <servlet
+        key="vcard"
+        name="vCard Servlet"
+        class="com.mesilat.carddav.VCardServlet">
+        <description key="com.mesilat.carddav-templates.vcard.desc"></description>
+        <url-pattern>/carddav-templates/vcard</url-pattern>
+    </servlet>
+    <servlet
+        key="carddav"
+        name="CardDAV Servlet"
+        class="com.mesilat.carddav.server.CardDavServlet">
+        <description key="com.mesilat.carddav-templates.carddav.desc"></description>
+        <url-pattern>/carddav</url-pattern>
+        <url-pattern>/carddav/principals/*/</url-pattern>
+        <url-pattern>/carddav/addressbooks/*/</url-pattern>
+    </servlet>
+    <servlet-filter key="carddav-filter" name="CardDav Servlet Filter" class="com.mesilat.carddav.server.CardDavServletFilter" location="before-login" weight="200">
+        <description key="com.mesilat.carddav-templates.carddav-filter.desc"></description>
+        <url-pattern>/plugins/servlet/carddav</url-pattern>
+        <url-pattern>/plugins/servlet/carddav/principals/*/</url-pattern>
+        <url-pattern>/plugins/servlet/carddav/addressbooks/*/</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </servlet-filter>
+
+    <rest key="rest" path="/carddav-templates" version="1.0" name="REST API">
+    </rest>
+
+    <web-resource key="editor-resources" name="Editor Resources">
+        <transformation extension="soy">
+            <transformer key="soyTransformer">
+                <functions>com.atlassian.confluence.plugins.soy:soy-core-functions</functions>
+            </transformer>
+        </transformation>
+        <transformation extension="js">
+            <transformer key="jsI18n"/>
+        </transformation>
+
+        <dependency>com.atlassian.auiplugin:aui-buttons</dependency>
+
+        <resource type="download" name="carddav.soy.js"           location="/templates/carddav.soy"/>
+        <resource type="download" name="carddav-templates.css"    location="/css/carddav-templates.css"/>
+
+        <context>editor</context>
+    </web-resource>
+    <web-resource key="general-resources" name="General Resources">
+        <dependency>com.atlassian.auiplugin:aui-buttons</dependency>
+        <resource type="download" name="carddav-templates.js"     location="/js/carddav-templates.js"/>
+        <resource type="download" name="carddav-templates.css"    location="/css/carddav-templates.css"/>
+        <context>atl.general</context>
+    </web-resource>
+
+
+    <ao key="ao-module">
+        <entity>com.mesilat.carddav.VCardTag</entity>
+    </ao>
+</atlassian-plugin>

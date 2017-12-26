@@ -1,0 +1,8 @@
+tbody.com-mesilat-object-address > tr > th,
+tbody.com-mesilat-object-address > tr > th.confluenceTh
+tbody.com-mesilat-object-address > tr > th,
+tbody.com-mesilat-object-address > tr > th.confluenceTh
+{
+    white-space: nowrap;
+    text-align: right;
+}

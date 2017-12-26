@@ -1,0 +1,18 @@
+{namespace Mesilat.CardDAV.Templates}
+
+/**
+* vCard Template
+* @param pageId
+*/
+{template .vcard}
+<a href="{contextPath()}/plugins/servlet/carddav-templates/vcard?pageId={$pageId}" title="{getText('com.mesilat.carddav-templates.vcard.tooltip')}" class="carddav-vcard-macro-link">
+<img target="_new" src="{contextPath()}/download/resources/com.mesilat.carddav-templates/images/vcard.png"/>
+</a>
+{/template}
+
+/**
+* AddRow Macro template
+*/
+{template .addRowMacro}
+<div class="com-mesilat-addrow-macro"></div>
+{/template}
